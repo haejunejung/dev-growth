@@ -7,8 +7,14 @@ import { TextElement } from "./TextElement";
 import { HStack, VStack } from "./Stack";
 import useIconURLStore from "@/utils/stores/useIconModuleStore";
 
+interface IconURLs {
+  IcYoutube: string;
+  IcGithub: string;
+  IcBlog: string;
+}
+
 const BottomNavigator = () => {
-  const iconURLs = useIconURLStore();
+  const iconURLs = useIconURLStore() as IconURLs;
 
   return (
     <BoxElement
