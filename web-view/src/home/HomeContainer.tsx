@@ -30,10 +30,9 @@ const HomeContainer = () => {
           style={{ paddingBottom: 20 }}
         />
         <TextElement textStyle="T1">
-          Welcome to{" "}
-          <span style={{ color: colorPalette.red_main }}>developer growth</span>
+          Welcome to <span style={{ color: "#FF4911" }}>developer growth</span>
         </TextElement>
-        <BoxElement width={270} height={90} color={colorPalette.yellow_main}>
+        <BoxElement width={270} height={90} color={"#FFFF00"}>
           <ButtonElement fullWidth={true}>
             <Link href={ROUTES.YOUTUBE}>
               <TextElement textStyle="T1">DEV</TextElement>

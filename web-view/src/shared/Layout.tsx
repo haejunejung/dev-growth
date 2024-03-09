@@ -31,7 +31,7 @@ const Container = styled.div(({ minHeight }: { minHeight?: number }) => ({
   marginRight: "auto",
   minHeight: minHeight ?? "100vh",
   overflowY: "hidden",
-  backgroundColor: "rgb(253, 253, 150, 0.7)",
+  backgroundColor: "rgb(253, 253, 150)",
   position: "relative", // Add this line to make the container position relative
 }));
 
