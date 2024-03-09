@@ -1,8 +1,10 @@
 "use client";
 
-import { getStyles } from "@/utils/queries/figma";
+import { getComponents, getStyles } from "@/utils/queries/figma";
 import { convertColorPalette } from "@/utils/services/convertColorPalette";
+import { convertIcons } from "@/utils/services/convertIcons";
 import useColorStore from "@/utils/stores/useColorModuleStore";
+import useIconURLStore from "@/utils/stores/useIconModuleStore";
 import styled from "@emotion/styled";
 import { ReactNode, useEffect } from "react";
 
@@ -20,6 +22,17 @@ export const Layout = ({ children }: Props) => {
     };
 
     fetchColorPalette();
+  }, []);
+
+  useEffect(() => {
+    const fetchIconURLs = async () => {
+      const iconComponents = await getComponents();
+      const iconURLs = await convertIcons(iconComponents);
+
+      useIconURLStore.setState(iconURLs);
+    };
+
+    fetchIconURLs();
   }, []);
 
   useEffect(() => {

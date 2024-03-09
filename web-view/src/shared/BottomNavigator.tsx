@@ -1,10 +1,15 @@
+"use client";
+
 import { ROUTES } from "@/utils/constants";
 import BoxElement from "./BoxElement";
 import Link from "next/link";
 import { TextElement } from "./TextElement";
-import { HStack } from "./Stack";
+import { HStack, VStack } from "./Stack";
+import useIconURLStore from "@/utils/stores/useIconModuleStore";
 
 const BottomNavigator = () => {
+  const iconURLs = useIconURLStore();
+
   return (
     <BoxElement
       width={350}
@@ -14,17 +19,26 @@ const BottomNavigator = () => {
       <HStack
         gap={20}
         alignItems="center"
-        justifyContent="center"
+        justifyContent="space-around"
         height={"100%"}
       >
         <Link href={ROUTES.YOUTUBE}>
-          <TextElement textStyle="T1">YOUTUBE</TextElement>
+          <VStack alignItems="center">
+            <img src={iconURLs["IcYoutube"]} width={30} height={30} />
+            <TextElement textStyle="C1">Youtube</TextElement>
+          </VStack>
         </Link>
         <Link href={ROUTES.GITHUB}>
-          <TextElement textStyle="T1">GITHUB</TextElement>
+          <VStack alignItems="center">
+            <img src={iconURLs["IcGithub"]} width={30} height={30} />
+            <TextElement textStyle="C1">Github</TextElement>
+          </VStack>
         </Link>
         <Link href={ROUTES.BLOG}>
-          <TextElement textStyle="T1">BLOG</TextElement>
+          <VStack alignItems="center">
+            <img src={iconURLs["IcBlog"]} width={30} height={30} />
+            <TextElement textStyle="C1">Tech</TextElement>
+          </VStack>
         </Link>
       </HStack>
     </BoxElement>
