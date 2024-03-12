@@ -27,12 +27,17 @@ const CircleElement = (props: CircleElementProps) => {
   );
 };
 
+export default CircleElement;
+
 interface StyledCircleProps {
   size: number;
   color?: string;
 }
 
 const StyledCircle = styled.div<StyledCircleProps>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: ${(props) => props.size}px;
   height: ${(props) => props.size}px;
   background-color: ${(props) => props.color};
