@@ -1,8 +1,9 @@
 "use client";
 
-import { getComponents, getStyles } from "@/utils/queries/figma";
+import { getFigmaComponents } from "@/utils/queries/getFigmaComponents";
+import { getFigmaStyles } from "@/utils/queries/getFigmaStyles";
 import { convertColorPalette } from "@/utils/services/convertColorPalette";
-import { convertIcons } from "@/utils/services/convertIcons";
+import { convertComponentToIconURL } from "@/utils/services/convertComponentToIconURL";
 import useColorStore from "@/utils/stores/useColorModuleStore";
 import useIconURLStore from "@/utils/stores/useIconModuleStore";
 import styled from "@emotion/styled";
@@ -15,7 +16,7 @@ interface Props {
 export const Layout = ({ children }: Props) => {
   useEffect(() => {
     const fetchColorPalette = async () => {
-      const styles = await getStyles();
+      const styles = await getFigmaStyles();
       const colorPalette = convertColorPalette(styles);
 
       useColorStore.setState(colorPalette);
@@ -26,9 +27,9 @@ export const Layout = ({ children }: Props) => {
 
   useEffect(() => {
     const fetchIconURLs = async () => {
-      const iconComponents = await getComponents();
-      const iconURLs = await convertIcons(iconComponents);
-
+      const iconComponents = await getFigmaComponents();
+      const iconURLs = await convertComponentToIconURL(iconComponents);
+      console.log(iconURLs);
       useIconURLStore.setState(iconURLs);
     };
 
@@ -61,7 +62,7 @@ const Container = styled.div(({}: { minHeight?: number }) => ({
   marginRight: "auto",
   minHeight: "calc(var(--vh, 1vh) * 100)",
   overflowY: "hidden",
-  backgroundColor: "rgb(253, 253, 150)",
+  backgroundColor: "#FF4911",
   position: "relative",
 }));
 

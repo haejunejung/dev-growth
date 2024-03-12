@@ -1,18 +1,18 @@
 "use client";
 
-import useColorStore from "@/utils/stores/useColorModuleStore";
-import { VStack } from "../shared/Stack";
+import { HStack, VStack } from "../shared/Stack";
 import HomeBackground from "./HomeBackground";
-import { ImageElement } from "../shared/ImageElement";
-import profile from "@/public/profile.svg";
-import { TextElement } from "../shared/TextElement";
 import BoxElement from "../shared/BoxElement";
-import { ButtonElement } from "../shared/ButtonElement";
+import StyledTextElement from "./StyledTextElement";
+import useIconURLStore from "@/utils/stores/useIconModuleStore";
 import Link from "next/link";
-import { ROUTES } from "@/utils/constants";
+import { ROUTES } from "../../utils/constants";
 
 const HomeContainer = () => {
-  const colorPalette: any = useColorStore();
+  const WELCOME = ["W", "E", "L", "C", "O", "M", "LAST_E"];
+  const iconURLs = useIconURLStore() as any;
+
+  console.log(iconURLs);
 
   return (
     <VStack width={390} height={"100vh"}>
@@ -21,23 +21,37 @@ const HomeContainer = () => {
         alignItems="center"
         justifyContent="center"
         height={"100%"}
-        gap={16}
+        gap={32}
+        style={{ zIndex: 1 }}
       >
-        <ImageElement
-          src={profile}
-          width={120}
-          height={120}
-          style={{ paddingBottom: 20 }}
-        />
-        <TextElement textStyle="T1">
-          Welcome to <span style={{ color: "#FF4911" }}>developer growth</span>
-        </TextElement>
-        <BoxElement width={270} height={90} color={"#FFFF00"}>
-          <ButtonElement fullWidth={true}>
-            <Link href={ROUTES.YOUTUBE}>
-              <TextElement textStyle="T1">DEV</TextElement>
-            </Link>
-          </ButtonElement>
+        <HStack>
+          {WELCOME.map((letter, index) => (
+            <StyledTextElement text={letter} key={index} />
+          ))}
+        </HStack>
+        <BoxElement
+          width={64}
+          height={64}
+          color="white"
+          style={{
+            transform: "rotate(45deg)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Link href={ROUTES.HOME}>
+            {
+              <img
+                src={iconURLs?.IcRight_48} // Access the 'IcRight_48' property correctly
+                style={{
+                  transform: "rotate(-45deg)",
+                  alignItems: "center",
+                  justifyItems: "center",
+                }}
+              />
+            }
+          </Link>
         </BoxElement>
       </VStack>
     </VStack>
