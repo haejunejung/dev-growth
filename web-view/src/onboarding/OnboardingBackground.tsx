@@ -1,6 +1,6 @@
 import React from "react";
 
-const HomeBackground = () => {
+const OnboardingBackground = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -336,4 +336,4 @@ const HomeBackground = () => {
   );
 };
 
-export default HomeBackground;
+export default OnboardingBackground;

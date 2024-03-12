@@ -1,14 +1,14 @@
 "use client";
 
 import { HStack, VStack } from "../shared/Stack";
-import HomeBackground from "./HomeBackground";
 import BoxElement from "../shared/BoxElement";
 import StyledTextElement from "./StyledTextElement";
 import useIconURLStore from "@/utils/stores/useIconModuleStore";
 import Link from "next/link";
 import { ROUTES } from "../../utils/constants";
+import OnboardingBackground from "./OnboardingBackground";
 
-const HomeContainer = () => {
+const OnboardingContainer = () => {
   const WELCOME = ["W", "E", "L", "C", "O", "M", "LAST_E"];
   const iconURLs = useIconURLStore() as any;
 
@@ -16,7 +16,7 @@ const HomeContainer = () => {
 
   return (
     <VStack width={390} height={"100vh"}>
-      <HomeBackground />
+      <OnboardingBackground />
       <VStack
         alignItems="center"
         justifyContent="center"
@@ -58,4 +58,4 @@ const HomeContainer = () => {
   );
 };
 
-export default HomeContainer;
+export default OnboardingContainer;

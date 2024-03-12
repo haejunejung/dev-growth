@@ -1,9 +1,9 @@
-import HomeContainer from "@/src/home/HomeContainer";
+import OnboardingContainer from "@/src/onboarding/OnboardingContainer";
 
 export default function Home() {
   return (
     <main>
-      <HomeContainer />
+      <OnboardingContainer />
     </main>
   );
 }
