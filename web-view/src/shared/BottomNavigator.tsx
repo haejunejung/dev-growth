@@ -5,12 +5,6 @@ import { TextElement } from "./TextElement";
 import { HStack, VStack } from "./Stack";
 import useIconURLStore from "@/utils/stores/useIconURLStore";
 
-interface IconURLs {
-  IcYoutube: string;
-  IcGithub: string;
-  IcBlog: string;
-}
-
 const BottomNavigator = () => {
   const iconURLs = useIconURLStore.getState().iconURLs;
 

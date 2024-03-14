@@ -6,13 +6,19 @@ import useColorStore from "@/utils/stores/useColorPaletteStore";
 import { TextElement } from "../shared/TextElement";
 import BoxElement from "../shared/BoxElement";
 import GridElement from "../shared/GridElement";
+import { ImageElement } from "../shared/ImageElement";
+
+const IconElement = ({ src, color }: { src: string | null; color: string }) => {
+  return (
+    <CircleElement size={48} color={color}>
+      <ImageElement src={src ?? ""} width={24} height={24} />
+    </CircleElement>
+  );
+};
 
 const HomeContainer = () => {
   const colorPalette = useColorStore.getState().colorPalette;
   const iconURLs = useIconURLStore.getState().iconURLs;
-
-  console.log(colorPalette);
-  console.log(iconURLs);
 
   return (
     <VStack height={"100vh"}>
@@ -23,41 +29,10 @@ const HomeContainer = () => {
           paddingVertical={20}
           justifyContent="space-between"
         >
-          <CircleElement size={48} color="white">
-            {
-              <img
-                src={iconURLs.IcDev ?? ""} // Access the 'IcRight_48' property correctly
-                style={{
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
-              />
-            }
-          </CircleElement>
-
+          <IconElement src={iconURLs.IcDev} color="white" />
           <HStack gap={16}>
-            <CircleElement size={48} color="white">
-              {
-                <img
-                  src={iconURLs.IcSearch ?? ""} // Access the 'IcRight_48' property correctly
-                  style={{
-                    alignItems: "center",
-                    justifyItems: "center",
-                  }}
-                />
-              }
-            </CircleElement>
-            <CircleElement size={48} color="white">
-              {
-                <img
-                  src={iconURLs.IcNew ?? ""} // Access the 'IcRight_48' property correctly
-                  style={{
-                    alignItems: "center",
-                    justifyItems: "center",
-                  }}
-                />
-              }
-            </CircleElement>
+            <IconElement src={iconURLs.IcSearch} color="white" />
+            <IconElement src={iconURLs.IcNew} color="white" />
           </HStack>
         </HStack>
       </VStack>
@@ -71,50 +46,10 @@ const HomeContainer = () => {
         }}
       >
         <HStack justifyContent="space-around" paddingVertical={20}>
-          <CircleElement size={48} color={colorPalette.red_main}>
-            {
-              <img
-                src={iconURLs.IcMenu ?? ""} // Access the 'IcRight_48' property correctly
-                style={{
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
-              />
-            }
-          </CircleElement>
-          <CircleElement size={48} color={colorPalette.red_main}>
-            {
-              <img
-                src={iconURLs.IcBlog ?? ""} // Access the 'IcRight_48' property correctly
-                style={{
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
-              />
-            }
-          </CircleElement>
-          <CircleElement size={48} color={colorPalette.red_main}>
-            {
-              <img
-                src={iconURLs.IcYoutube ?? ""} // Access the 'IcRight_48' property correctly
-                style={{
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
-              />
-            }
-          </CircleElement>
-          <CircleElement size={48} color={colorPalette.red_main}>
-            {
-              <img
-                src={iconURLs.IcGithub ?? ""} // Access the 'IcRight_48' property correctly
-                style={{
-                  alignItems: "center",
-                  justifyItems: "center",
-                }}
-              />
-            }
-          </CircleElement>
+          <IconElement src={iconURLs.IcMenu} color={colorPalette.red_main} />
+          <IconElement src={iconURLs.IcBlog} color={colorPalette.red_main} />
+          <IconElement src={iconURLs.IcYoutube} color={colorPalette.red_main} />
+          <IconElement src={iconURLs.IcGithub} color={colorPalette.red_main} />
         </HStack>
 
         <HStack
@@ -133,15 +68,10 @@ const HomeContainer = () => {
           {Array.from({ length: 4 }).map((_, index) => (
             <BoxElement width={160} height={160} key={index}>
               {
-                <img
-                  src={
-                    "https://yt3.googleusercontent.com/QrgmVSc0XrlU2-HvapuC-MiN4-NHmtHt1tgvaMdMbXXEX1GDzOhJkfBHnSOalo7IFLMOemaO=s176-c-k-c0x00ffffff-no-rj"
-                  } // Access the 'IcRight_48' property correctly
-                  style={{
-                    alignItems: "center",
-                    justifyItems: "center",
-                    objectFit: "cover",
-                  }}
+                <ImageElement
+                  src="https://yt3.googleusercontent.com/QrgmVSc0XrlU2-HvapuC-MiN4-NHmtHt1tgvaMdMbXXEX1GDzOhJkfBHnSOalo7IFLMOemaO=s176-c-k-c0x00ffffff-no-rj"
+                  width={160}
+                  height={160}
                 />
               }
             </BoxElement>
