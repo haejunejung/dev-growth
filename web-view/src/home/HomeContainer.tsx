@@ -1,17 +1,18 @@
-"use client";
-
-import useIconURLStore from "@/utils/stores/useIconModuleStore";
+import useIconURLStore from "@/utils/stores/useIconURLStore";
 import CircleElement from "../shared/CircleElement";
 import { HStack, VStack } from "../shared/Stack";
 import { Spacer } from "../shared/Spacer";
-import useColorStore from "@/utils/stores/useColorModuleStore";
+import useColorStore from "@/utils/stores/useColorPaletteStore";
 import { TextElement } from "../shared/TextElement";
 import BoxElement from "../shared/BoxElement";
 import GridElement from "../shared/GridElement";
 
 const HomeContainer = () => {
-  const colorPalette = useColorStore() as any;
-  const iconURLs = useIconURLStore() as any;
+  const colorPalette = useColorStore.getState().colorPalette;
+  const iconURLs = useIconURLStore.getState().iconURLs;
+
+  console.log(colorPalette);
+  console.log(iconURLs);
 
   return (
     <VStack height={"100vh"}>
@@ -25,7 +26,7 @@ const HomeContainer = () => {
           <CircleElement size={48} color="white">
             {
               <img
-                src={iconURLs?.IcDev} // Access the 'IcRight_48' property correctly
+                src={iconURLs.IcDev ?? ""} // Access the 'IcRight_48' property correctly
                 style={{
                   alignItems: "center",
                   justifyItems: "center",
@@ -38,7 +39,7 @@ const HomeContainer = () => {
             <CircleElement size={48} color="white">
               {
                 <img
-                  src={iconURLs?.IcSearch} // Access the 'IcRight_48' property correctly
+                  src={iconURLs.IcSearch ?? ""} // Access the 'IcRight_48' property correctly
                   style={{
                     alignItems: "center",
                     justifyItems: "center",
@@ -49,7 +50,7 @@ const HomeContainer = () => {
             <CircleElement size={48} color="white">
               {
                 <img
-                  src={iconURLs?.IcNew} // Access the 'IcRight_48' property correctly
+                  src={iconURLs.IcNew ?? ""} // Access the 'IcRight_48' property correctly
                   style={{
                     alignItems: "center",
                     justifyItems: "center",
@@ -73,7 +74,7 @@ const HomeContainer = () => {
           <CircleElement size={48} color={colorPalette.red_main}>
             {
               <img
-                src={iconURLs?.IcMenu} // Access the 'IcRight_48' property correctly
+                src={iconURLs.IcMenu ?? ""} // Access the 'IcRight_48' property correctly
                 style={{
                   alignItems: "center",
                   justifyItems: "center",
@@ -84,7 +85,7 @@ const HomeContainer = () => {
           <CircleElement size={48} color={colorPalette.red_main}>
             {
               <img
-                src={iconURLs?.IcBlog} // Access the 'IcRight_48' property correctly
+                src={iconURLs.IcBlog ?? ""} // Access the 'IcRight_48' property correctly
                 style={{
                   alignItems: "center",
                   justifyItems: "center",
@@ -95,7 +96,7 @@ const HomeContainer = () => {
           <CircleElement size={48} color={colorPalette.red_main}>
             {
               <img
-                src={iconURLs?.IcYoutube} // Access the 'IcRight_48' property correctly
+                src={iconURLs.IcYoutube ?? ""} // Access the 'IcRight_48' property correctly
                 style={{
                   alignItems: "center",
                   justifyItems: "center",
@@ -106,7 +107,7 @@ const HomeContainer = () => {
           <CircleElement size={48} color={colorPalette.red_main}>
             {
               <img
-                src={iconURLs?.IcGithub} // Access the 'IcRight_48' property correctly
+                src={iconURLs.IcGithub ?? ""} // Access the 'IcRight_48' property correctly
                 style={{
                   alignItems: "center",
                   justifyItems: "center",
@@ -129,7 +130,7 @@ const HomeContainer = () => {
         </HStack>
 
         <GridElement gap={20} paddingHorizontal={20} paddingVertical={20}>
-          {Array.from({ length: 6 }).map((_, index) => (
+          {Array.from({ length: 4 }).map((_, index) => (
             <BoxElement width={160} height={160} key={index}>
               {
                 <img

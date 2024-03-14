@@ -19,9 +19,11 @@ export const convertComponentToIconURL = async (iconComponents: {
         Object.keys(iconComponents).find((key) => iconComponents[key] === icon)
     );
 
-    if (iconImage !== undefined) {
+    if (iconImage !== undefined && iconImage !== null) {
       return images[iconImage];
     }
+
+    return "";
   };
 
   return {

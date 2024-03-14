@@ -3,7 +3,7 @@ import { Style } from "figma-api";
 export const convertColorPalette = (styles: { [styleName: string]: Style }) => {
   const getColorCode = (name: string) => {
     const style = Object.values(styles).find((s: any) => s.name === name);
-    return style ? style.description : undefined;
+    return style ? style.description : "";
   };
 
   return {

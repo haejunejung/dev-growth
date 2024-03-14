@@ -1,18 +1,14 @@
-"use client";
-
 import { HStack, VStack } from "../shared/Stack";
 import BoxElement from "../shared/BoxElement";
 import StyledTextElement from "./StyledTextElement";
-import useIconURLStore from "@/utils/stores/useIconModuleStore";
 import Link from "next/link";
 import { ROUTES } from "../../utils/constants";
 import OnboardingBackground from "./OnboardingBackground";
+import useIconURLStore from "@/utils/stores/useIconURLStore";
 
 const OnboardingContainer = () => {
   const WELCOME = ["W", "E", "L", "C", "O", "M", "LAST_E"];
-  const iconURLs = useIconURLStore() as any;
-
-  console.log(iconURLs);
+  const iconURLs = useIconURLStore.getState().iconURLs;
 
   return (
     <VStack width={390} height={"100vh"}>
@@ -43,7 +39,7 @@ const OnboardingContainer = () => {
           <Link href={ROUTES.HOME}>
             {
               <img
-                src={iconURLs?.IcRight_48} // Access the 'IcRight_48' property correctly
+                src={iconURLs.IcRight_48 ?? ""} // Add null check and provide a default value
                 style={{
                   transform: "rotate(-45deg)",
                   alignItems: "center",

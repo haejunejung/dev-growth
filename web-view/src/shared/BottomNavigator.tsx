@@ -5,7 +5,7 @@ import BoxElement from "./BoxElement";
 import Link from "next/link";
 import { TextElement } from "./TextElement";
 import { HStack, VStack } from "./Stack";
-import useIconURLStore from "@/utils/stores/useIconModuleStore";
+import useIconURLStore from "@/utils/stores/useIconURLStore";
 
 interface IconURLs {
   IcYoutube: string;
