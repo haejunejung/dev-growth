@@ -1,5 +1,3 @@
-"use client";
-
 import { ROUTES } from "@/utils/constants";
 import BoxElement from "./BoxElement";
 import Link from "next/link";
@@ -14,7 +12,7 @@ interface IconURLs {
 }
 
 const BottomNavigator = () => {
-  const iconURLs = useIconURLStore() as IconURLs;
+  const iconURLs = useIconURLStore.getState().iconURLs;
 
   return (
     <BoxElement
@@ -30,19 +28,19 @@ const BottomNavigator = () => {
       >
         <Link href={ROUTES.YOUTUBE}>
           <VStack alignItems="center">
-            <img src={iconURLs["IcYoutube"]} width={30} height={30} />
+            <img src={iconURLs["IcYoutube"] ?? ""} width={30} height={30} />
             <TextElement textStyle="C1">Youtube</TextElement>
           </VStack>
         </Link>
         <Link href={ROUTES.GITHUB}>
           <VStack alignItems="center">
-            <img src={iconURLs["IcGithub"]} width={30} height={30} />
+            <img src={iconURLs["IcGithub"] ?? ""} width={30} height={30} />
             <TextElement textStyle="C1">Github</TextElement>
           </VStack>
         </Link>
         <Link href={ROUTES.BLOG}>
           <VStack alignItems="center">
-            <img src={iconURLs["IcBlog"]} width={30} height={30} />
+            <img src={iconURLs["IcBlog"] ?? ""} width={30} height={30} />
             <TextElement textStyle="C1">Tech</TextElement>
           </VStack>
         </Link>
