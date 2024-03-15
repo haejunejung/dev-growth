@@ -15,7 +15,6 @@ const Container = styled.div(({}: { minHeight?: number }) => ({
   maxWidth: 390,
   marginLeft: "auto",
   marginRight: "auto",
-  overflowY: "hidden",
   backgroundColor: "#FF4911",
   position: "relative",
 }));
