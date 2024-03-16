@@ -36,5 +36,6 @@ export const convertComponentToIconURL = async (iconComponents: {
     IcNew: getIcon("IcNew"),
     IcMenu: getIcon("IcMenu"),
     IcLinkRightArrow: getIcon("IcLinkRightArrow"),
+    IcNews: getIcon("IcNews"),
   };
 };

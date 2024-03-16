@@ -37,11 +37,6 @@ const BottomNavigator = () => {
             alt={"Youtube"}
           />
           <TabItem
-            href={ROUTES.GITHUB}
-            src={iconURLs.IcGithub ?? ""}
-            alt={"Github"}
-          />
-          <TabItem
             href={ROUTES.BLOG}
             src={iconURLs.IcBlog ?? ""}
             alt={"Blog"}

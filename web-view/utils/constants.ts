@@ -84,11 +84,17 @@ export const TECH_BLOGS = [
     src: "https://vos.line-scdn.net/landpress-content-v2_1761/1666854339957.png?updatedAt=1666854341000",
     alt: "라인 블로그",
   },
+
+  {
+    href: "https://yozm.wishket.com/magazine/",
+    src: "https://yozm.wishket.com/static/renewal/img/news/Graphic_Banner_Heart_3loop.gif",
+    alt: "요즘 IT",
+  },
 ];
 
 export const ROUTES = {
   HOME: "/",
-  GITHUB: "/github",
+  NEWS: "/news",
   YOUTUBE: "/youtube",
   BLOG: "/blog",
 };
