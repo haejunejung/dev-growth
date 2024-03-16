@@ -6,12 +6,13 @@ import Link from "next/link";
 import { ImageElement } from "../shared/ImageElement";
 import useIconURLStore from "@/utils/stores/useIconURLStore";
 import { TECH_BLOGS } from "@/utils/constants";
+import { Spacer } from "../shared/Spacer";
 const BlogContainer = () => {
   const colorPalette = useColorStore.getState().colorPalette;
   const iconURLs = useIconURLStore.getState().iconURLs;
 
   return (
-    <VStack height={"100vh"}>
+    <VStack>
       <VStack backgroundColor={colorPalette.red_main}>
         <HStack
           paddingHorizontal={20}
@@ -64,6 +65,8 @@ const BlogContainer = () => {
           ))}
         </VStack>
       </VStack>
+
+      <Spacer height={100} backgroundColor="white" />
     </VStack>
   );
 };

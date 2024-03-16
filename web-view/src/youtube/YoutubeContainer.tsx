@@ -7,12 +7,13 @@ import { ImageElement } from "../shared/ImageElement";
 import Link from "next/link";
 import BottomNavigator from "../shared/BottomNavigator";
 import { TECH_YOUTUBES } from "@/utils/constants";
+import { Spacer } from "../shared/Spacer";
 
 const YoutubeContainer = () => {
   const colorPalette = useColorStore.getState().colorPalette;
 
   return (
-    <VStack height={"100vh"}>
+    <VStack height={"100%"}>
       <VStack backgroundColor={colorPalette.red_main}>
         <HStack
           paddingHorizontal={20}
@@ -57,8 +58,7 @@ const YoutubeContainer = () => {
           ))}
         </GridElement>
       </VStack>
-
-      <BottomNavigator />
+      <Spacer height={100} backgroundColor="white" />
     </VStack>
   );
 };

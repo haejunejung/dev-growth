@@ -35,19 +35,24 @@ export const TECH_YOUTUBES = [
     src: "https://yt3.googleusercontent.com/R0BHC2bWTgyOxHXtX2MD04Mm2PSZZ4qA2SHv5TxuXHnBk5WMGyVx42NJ1MZIgGUY1ZJIXf_5nA=s176-c-k-c0x00ffffff-no-rj",
     alt: "당근 테크",
   },
+  {
+    href: "https://www.youtube.com/@NHNCloud/videos",
+    src: "https://yt3.googleusercontent.com/wEScuNlTFM5tkYzKAcHTnDT-WfCrrkO6W00XhBaiQzWFZQpeEBzKAOUOsD76xlHovnHl14zSFQ=s176-c-k-c0x00ffffff-no-rj",
+    alt: "NHN Cloud 테크",
+  },
 ];
 
 export const TECH_BLOGS = [
   {
     href: "https://tech.kakaopay.com/",
     src: "https://tech.kakaopay.com/_astro/thumb.d1ed7fac_ZdSsSI.avif",
-    alt: "Kakaopay Tech",
+    alt: "카카오페이 블로그",
   },
 
   {
     href: "https://fe-developers.kakaoent.com/",
     src: "https://fe-developers.kakaoent.com/static/1bda93dd1dec2e1e487f886194b4a9d9/4ce34/thumbnail.png",
-    alt: "Kakao Entertainment FE",
+    alt: "카카오엔터테이먼츠 블로그",
   },
 
   {
