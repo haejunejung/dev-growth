@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bagel_Fat_One, Inter } from "next/font/google";
 import "./globals.css";
 import Layout from "@/src/shared/Layout";
 import { getFigmaStyles } from "@/utils/queries/getFigmaStyles";
@@ -9,7 +9,7 @@ import { convertComponentToIconURL } from "@/utils/services/convertComponentToIc
 import useColorStore from "@/utils/stores/useColorPaletteStore";
 import useIconURLStore from "@/utils/stores/useIconURLStore";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Bagel_Fat_One({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",

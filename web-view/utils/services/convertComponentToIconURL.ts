@@ -1,5 +1,4 @@
 import * as Figma from "figma-api";
-import { FIGMA_ACCESS_TOKEN, FIGMA_FILE_KEY } from "../constants";
 import { getFigmaImages } from "../queries/getFigmaImages";
 
 export const convertComponentToIconURL = async (iconComponents: {
@@ -36,5 +35,6 @@ export const convertComponentToIconURL = async (iconComponents: {
     IcDev: getIcon("IcDev"),
     IcNew: getIcon("IcNew"),
     IcMenu: getIcon("IcMenu"),
+    IcLinkRightArrow: getIcon("IcLinkRightArrow"),
   };
 };

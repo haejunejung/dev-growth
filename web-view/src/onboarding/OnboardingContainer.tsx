@@ -36,7 +36,7 @@ const OnboardingContainer = () => {
             justifyContent: "center",
           }}
         >
-          <Link href={ROUTES.HOME}>
+          <Link href={ROUTES.YOUTUBE}>
             {
               <img
                 src={iconURLs.IcRight_48 ?? ""} // Add null check and provide a default value
