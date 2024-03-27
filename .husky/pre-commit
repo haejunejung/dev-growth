@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo '******************************************'
+echo '******************************************'
+echo '******************************************'
+echo 'Gonna check code style before commiting...'
+echo '******************************************'
+echo '******************************************'
+echo '******************************************'
+
+yarn run format
+yarn run format:fix
+yarn run lint
+yarn run lint-fix
