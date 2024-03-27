@@ -2,3 +2,6 @@ next.config.mjs
 tsconfig.json
 .prettierrc.json
 .eslintrc.json
+.next
+node_modules
+web-view
