@@ -6,7 +6,8 @@ import {ReactNode} from 'react';
 interface ButtonProps {
   children: ReactNode;
   mode: 'fill' | 'line';
-  padding?: Property.Padding;
+  paddingHorizontal: Property.Padding;
+  paddingVertical: Property.Padding;
   borderColor?: Property.BorderColor;
   borderRadius?: Property.BorderRadius;
   backgroundColor?: Property.BackgroundColor;
@@ -18,7 +19,8 @@ interface ButtonProps {
 function Button({
   children,
   mode,
-  padding,
+  paddingHorizontal,
+  paddingVertical,
   borderColor,
   borderRadius,
   backgroundColor,
@@ -30,8 +32,8 @@ function Button({
     <button
       type="button"
       style={{
-        padding,
         width: fullWidth ? '100%' : 'auto',
+        padding: `${paddingVertical}px ${paddingHorizontal}px`,
         cursor: disabled ? 'default' : 'pointer',
         borderRadius: borderRadius ?? 0,
         border:

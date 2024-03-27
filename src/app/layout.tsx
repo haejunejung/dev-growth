@@ -1,12 +1,13 @@
 import type {Metadata} from 'next';
-import {Inter} from 'next/font/google';
+// eslint-disable-next-line camelcase
+import {Bagel_Fat_One} from 'next/font/google';
 import './globals.css';
 import {ReactNode} from 'react';
 import {useColors, useIcons} from '@/shared/api';
 import {useColorPaletteStore, useIconStore} from '@/shared/stores';
 import {BottomNavigator} from '@/widgets';
 
-const inter = Inter({subsets: ['latin']});
+const inter = Bagel_Fat_One({weight: '400', subsets: ['latin']});
 
 export const metadata: Metadata = {
   title: 'Create Next App',

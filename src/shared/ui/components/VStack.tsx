@@ -1,5 +1,5 @@
 import {Property} from 'csstype';
-import {ReactNode} from 'react';
+import {CSSProperties, ReactNode} from 'react';
 
 /* eslint-disable react/require-default-props */
 
@@ -13,10 +13,11 @@ interface VStackProps {
   alignItems?: Property.AlignItems;
   justifyContent?: Property.JustifyContent;
   width?: Property.Width;
-  hegiht?: Property.Height;
+  height?: Property.Height;
   position?: Property.Position;
   top?: Property.Top;
   bottom?: Property.Bottom;
+  style?: CSSProperties;
 }
 
 function VStack({
@@ -29,27 +30,29 @@ function VStack({
   alignItems,
   justifyContent,
   width,
-  hegiht,
+  height,
   position,
   top,
   bottom,
+  style,
 }: VStackProps) {
   return (
     <div
       style={{
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: 'column',
         flex,
         backgroundColor,
-        padding: `${paddingVertical} ${paddingHorizontal}`,
-        gap,
+        padding: `${paddingVertical}px ${paddingHorizontal}px`,
+        gap: `${gap}px`,
         alignItems,
         justifyContent,
-        width,
-        height: hegiht,
+        width: `${width}px`,
+        height: `${height}px`,
         position,
         top,
         bottom,
+        ...style,
       }}
     >
       {children}

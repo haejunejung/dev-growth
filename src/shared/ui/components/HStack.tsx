@@ -1,5 +1,5 @@
 import {Property} from 'csstype';
-import {ReactNode} from 'react';
+import {CSSProperties, ReactNode} from 'react';
 
 /* eslint-disable react/require-default-props */
 
@@ -13,10 +13,11 @@ interface HStackProps {
   alignItems?: Property.AlignItems;
   justifyContent?: Property.JustifyContent;
   width?: Property.Width;
-  hegiht?: Property.Height;
+  height?: Property.Height;
   position?: Property.Position;
   top?: Property.Top;
   bottom?: Property.Bottom;
+  style?: CSSProperties;
 }
 
 function HStack({
@@ -29,10 +30,11 @@ function HStack({
   alignItems,
   justifyContent,
   width,
-  hegiht,
+  height,
   position,
   top,
   bottom,
+  style,
 }: HStackProps) {
   return (
     <div
@@ -41,18 +43,16 @@ function HStack({
         flexDirection: 'row',
         flex,
         backgroundColor,
-        paddingLeft: paddingHorizontal,
-        paddingRight: paddingHorizontal,
-        paddingTop: paddingVertical,
-        paddingBottom: paddingVertical,
-        gap,
+        padding: `${paddingVertical}px ${paddingHorizontal}px`,
+        gap: `${gap}px`,
         alignItems,
         justifyContent,
-        width,
-        height: hegiht,
+        width: `${width}px`,
+        height: `${height}px`,
         position,
         top,
         bottom,
+        ...style,
       }}
     >
       {children}

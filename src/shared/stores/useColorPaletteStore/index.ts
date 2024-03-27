@@ -1,8 +1,13 @@
+import {ColorPaletteType} from '@/shared/model';
 import {create} from 'zustand';
 
-const useColorPaletteStore = create(set => ({
-  colorPalette: {},
-  setColorPalette: (colorPalette: {[colorName: string]: string}) =>
+interface ColorStoreProps {
+  colorPalette: Record<ColorPaletteType, string>;
+}
+
+const useColorPaletteStore = create<ColorStoreProps>(set => ({
+  colorPalette: {} as Record<ColorPaletteType, string>,
+  setColorPalette: (colorPalette: Record<ColorPaletteType, string>) =>
     set({colorPalette}),
 }));
 

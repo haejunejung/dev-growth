@@ -14,7 +14,7 @@ interface HeaderProps {
   alignItems?: Property.AlignItems;
   justifyContent?: Property.JustifyContent;
   width?: Property.Width;
-  hegiht?: Property.Height;
+  height?: Property.Height;
   position?: Property.Position;
   top?: Property.Top;
   bottom?: Property.Bottom;
@@ -31,7 +31,7 @@ function Header({
   alignItems,
   justifyContent,
   width,
-  hegiht,
+  height,
   position,
   top,
   bottom,
@@ -43,12 +43,12 @@ function Header({
         flex,
         flexDirection,
         backgroundColor,
-        padding: `${paddingVertical} ${paddingHorizontal}`,
-        gap,
+        padding: `${paddingVertical}px ${paddingHorizontal}px`,
+        gap: `${gap}px`,
         alignItems,
         justifyContent,
-        width,
-        height: hegiht,
+        width: `${width}px`,
+        height: `${height}px`,
         position,
         top,
         bottom,

@@ -8,6 +8,7 @@ import Text from './components/Text';
 import Modal from './components/Modal';
 import Header from './components/Header';
 import ShadowBox from './components/ShadowBox';
+import Grid from './components/Grid';
 
 export {
   HStack,
@@ -20,4 +21,5 @@ export {
   Modal,
   Header,
   ShadowBox,
+  Grid,
 };

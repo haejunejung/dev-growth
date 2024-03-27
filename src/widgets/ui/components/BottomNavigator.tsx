@@ -1,7 +1,7 @@
 import {ROUTES} from '@/shared/consts';
 import {useIconStore} from '@/shared/stores';
 
-import {HStack, Image, ShadowBox, VStack} from '@/shared/ui';
+import {HStack, Image, ShadowBox, Text, VStack} from '@/shared/ui';
 import Link from 'next/link';
 
 interface TabItemProps {
@@ -15,6 +15,9 @@ function TabItem({href, icon, name}: TabItemProps) {
     <Link href={href}>
       <VStack alignItems="center">
         <Image src={icon} alt={name} width={24} height={24} />
+        <Text textStyle="C2" color="black">
+          {name}
+        </Text>
       </VStack>
     </Link>
   );
@@ -26,22 +29,22 @@ function BottomNavigator() {
     {
       href: ROUTES.YOUTUBE,
       icon: icons.IcYoutube,
-      name: 'Home',
+      name: '유튜브',
     },
     {
       href: ROUTES.BLOG,
       icon: icons.IcBlog,
-      name: 'Blog',
+      name: '블로그',
     },
     {
       href: ROUTES.COMMUNITY,
       icon: icons.IcCommunity,
-      name: 'Community',
+      name: '커뮤니티',
     },
     {
       href: ROUTES.SETTING,
       icon: icons.IcSetting,
-      name: 'Setting',
+      name: '설정',
     },
   ];
   return (
@@ -50,12 +53,12 @@ function BottomNavigator() {
       height={60}
       style={{
         alignItems: 'center',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
         width: '100%',
         maxWidth: 350,
-        padding: '24px 0',
+        padding: '10px',
         position: 'fixed',
-        bottom: 20,
+        bottom: 10,
         transform: 'translateX(20px)',
         backgroundColor: 'white',
         zIndex: 2,
@@ -65,7 +68,7 @@ function BottomNavigator() {
         gap="20"
         alignItems="center"
         justifyContent="space-around"
-        hegiht="100%"
+        height="100%"
       >
         {tabs.map(tab => (
           <TabItem

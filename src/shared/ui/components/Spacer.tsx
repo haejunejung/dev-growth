@@ -29,10 +29,10 @@ function Spacer({
       style={{
         display: 'block',
         backgroundColor,
-        padding: `${paddingVertical} ${paddingHorizontal}`,
-        margin: `${marginVertical} ${marginHorizontal}`,
-        width,
-        height,
+        padding: `${paddingVertical}px ${paddingHorizontal}px`,
+        margin: `${marginVertical}px ${marginHorizontal}px`,
+        width: `${width}px`,
+        height: `${height}px`,
         ...style,
       }}
     />
