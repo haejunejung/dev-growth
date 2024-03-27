@@ -9,4 +9,15 @@ const nextConfig = {
       labelFormat: '[local]',
     },
   },
+
+  images: {
+    remotePatterns: [{
+      protocol: "https",
+      hostname: "figma-alpha-api.s3.us-west-2.amazonaws.com"
+    }],
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src"
+  }
 };
+
+export default nextConfig;

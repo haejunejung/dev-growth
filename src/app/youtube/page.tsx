@@ -1,4 +1,4 @@
-import YoutubePage from '@/pages/youtube';
+import YoutubePage from '@/screens/youtube';
 
 function Youtube() {
   return <YoutubePage />;

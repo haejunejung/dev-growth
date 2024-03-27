@@ -2,6 +2,9 @@ import type {Metadata} from 'next';
 import {Inter} from 'next/font/google';
 import './globals.css';
 import {ReactNode} from 'react';
+import {useColors, useIcons} from '@/shared/api';
+import {useColorPaletteStore, useIconStore} from '@/shared/stores';
+import {BottomNavigator} from '@/widgets';
 
 const inter = Inter({subsets: ['latin']});
 
@@ -15,21 +18,31 @@ function MobileContainer({children}: {children: ReactNode}) {
     <div
       style={{
         maxWidth: 390,
-        margin: '0 auto',
+        marginLeft: 'auto',
+        marginRight: 'auto',
         backgroundColor: '#FF4911',
         position: 'relative',
+        minHeight: '100vh',
+        height: '100%',
       }}
     >
       {children}
+      <BottomNavigator />
     </div>
   );
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
+  const {colorPalette} = await useColors();
+  const {icons} = await useIcons();
+
+  useColorPaletteStore.setState({colorPalette});
+  useIconStore.setState({icons});
+
   return (
     <html lang="en">
       <body className={inter.className}>

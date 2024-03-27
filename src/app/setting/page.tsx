@@ -1,4 +1,4 @@
-import SettingPage from '@/pages/setting';
+import SettingPage from '@/screens/setting';
 
 function Setting() {
   return <SettingPage />;
