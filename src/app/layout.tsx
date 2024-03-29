@@ -23,7 +23,6 @@ function MobileContainer({children}: {children: ReactNode}) {
         marginRight: 'auto',
         backgroundColor: '#FF4911',
         position: 'relative',
-        minHeight: '100vh',
         height: '100%',
       }}
     >
