@@ -79,7 +79,7 @@ function YoutubePage() {
           paddingHorizontal="20"
           paddingVertical="20"
         >
-          <Text textStyle="T5">Blog</Text>
+          <Text textStyle="T5">Youtube</Text>
           <Text textStyle="C2-bold" color={colorPalette.blue_main}>
             View All
           </Text>

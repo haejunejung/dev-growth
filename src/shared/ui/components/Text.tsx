@@ -1,9 +1,9 @@
+/* eslint-disable react/require-default-props */
 import {Property} from 'csstype';
 import {CSSProperties, ReactNode} from 'react';
 
 interface TextProps {
   children: ReactNode;
-  // eslint-disable-next-line react/require-default-props
   color?: Property.Color;
   textStyle:
     | 'H1'
@@ -22,9 +22,10 @@ interface TextProps {
     | 'C2-medium'
     | 'C2-bold'
     | 'Logo';
+  style?: CSSProperties;
 }
 
-function Text({children, color, textStyle}: TextProps) {
+function Text({children, color, textStyle, style}: TextProps) {
   const TextStyle = (): CSSProperties => {
     switch (textStyle) {
       case 'H1': {
@@ -124,6 +125,7 @@ function Text({children, color, textStyle}: TextProps) {
         color: color ?? 'black',
         margin: 0,
         ...TextStyle(),
+        ...style,
       }}
     >
       {children}
