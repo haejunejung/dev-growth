@@ -41,11 +41,6 @@ function BottomNavigator() {
       icon: icons.IcCommunity,
       name: '커뮤니티',
     },
-    {
-      href: ROUTES.SETTING,
-      icon: icons.IcSetting,
-      name: '설정',
-    },
   ];
   return (
     <ShadowBox
