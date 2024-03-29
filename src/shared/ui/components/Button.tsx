@@ -5,9 +5,9 @@ import {ReactNode} from 'react';
 
 interface ButtonProps {
   children: ReactNode;
-  mode: 'fill' | 'line';
-  paddingHorizontal: Property.Padding;
-  paddingVertical: Property.Padding;
+  mode?: 'fill' | 'line';
+  paddingHorizontal?: Property.Padding;
+  paddingVertical?: Property.Padding;
   borderColor?: Property.BorderColor;
   borderRadius?: Property.BorderRadius;
   backgroundColor?: Property.BackgroundColor;

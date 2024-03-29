@@ -1,4 +1,5 @@
 import BottomNavigator from './components/BottomNavigator';
+import Layout from './components/Layout';
+import Group from './components/Group';
 
-// eslint-disable-next-line import/prefer-default-export
-export {BottomNavigator};
+export {BottomNavigator, Layout, Group};
