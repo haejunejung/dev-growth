@@ -1,5 +1,5 @@
-import HomePage from '@/screens/home';
+import YoutubePage from '@/screens/youtube';
 
 export default function Home() {
-  return <HomePage />;
+  return <YoutubePage />;
 }

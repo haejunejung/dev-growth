@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 
 import 'react-notion-x/src/styles.css';
 import {NotionRenderer} from 'react-notion-x';
+import {Spacer} from '@/shared/ui';
 
 const Code = dynamic(() =>
   import('react-notion-x/build/third-party/code').then(m => m.Code),
@@ -36,6 +37,7 @@ function NotionPage({recordMap}: {recordMap: any}) {
           Modal,
         }}
       />
+      <Spacer height="100" backgroundColor="white" />
     </div>
   );
 }

@@ -34,7 +34,7 @@ export default async function CommunityPage() {
                     <Image src={icons.IcKebab} width={24} height={24} />
                   </HStack>
                   <Link href={`/community/${post.id}`}>
-                    <VStack>
+                    <VStack height="80">
                       <Text textStyle="B1" style={{textAlign: 'left'}}>
                         {post.title}
                       </Text>
