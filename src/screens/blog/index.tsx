@@ -1,3 +1,3 @@
-import BlogPage from './ui';
+import BlogPage from './ui/BlogPage';
 
 export default BlogPage;

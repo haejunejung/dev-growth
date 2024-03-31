@@ -4,7 +4,7 @@ import {Grid, HStack, Image, ShadowBox, Text} from '@/shared/ui';
 import {Group, Layout} from '@/widgets/ui';
 import Link from 'next/link';
 
-function BlogPage() {
+export default function BlogPage() {
   const {colorPalette} = useColorPaletteStore.getState();
 
   return (
@@ -42,5 +42,3 @@ function BlogPage() {
     </Layout>
   );
 }
-
-export default BlogPage;

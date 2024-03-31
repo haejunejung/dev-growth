@@ -1,11 +1,11 @@
-import PostDetailPage from '@/screens/community/ui/PostDetailPage';
+import CommunityDetailPage from '@/screens/community/[id]';
 
-interface PostDetailProps {
+interface CommunityDetailProps {
   params: {
     id: string;
   };
 }
 
-export default function PostDetail({params}: PostDetailProps) {
-  return <PostDetailPage id={params.id} />;
+export default function CommunityDetail({params}: CommunityDetailProps) {
+  return <CommunityDetailPage id={params.id} />;
 }

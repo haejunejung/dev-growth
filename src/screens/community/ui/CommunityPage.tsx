@@ -1,12 +1,11 @@
 import {useNotionPostList} from '@/shared/api';
-import {useColorPaletteStore, useIconStore} from '@/shared/stores';
-import {Grid, HStack, Image, ShadowBox, Text, VStack} from '@/shared/ui';
+import {useColorPaletteStore} from '@/shared/stores';
+import {Grid, HStack, ShadowBox, Text, VStack} from '@/shared/ui';
 import {Group, Layout} from '@/widgets/ui';
 import Link from 'next/link';
 
 export default async function CommunityPage() {
   const {colorPalette} = useColorPaletteStore.getState();
-  const {icons} = useIconStore.getState();
   const {notionPostList} = await useNotionPostList(
     'b64da9383fbb41e6bfa37ec3ae8f1bfe',
   );
@@ -31,7 +30,6 @@ export default async function CommunityPage() {
                         </Text>
                       </VStack>
                     </HStack>
-                    <Image src={icons.IcKebab} width={24} height={24} />
                   </HStack>
                   <Link href={`/community/${post.id}`}>
                     <VStack height="80">

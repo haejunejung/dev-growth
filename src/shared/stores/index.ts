@@ -1,4 +1,4 @@
-import useColorPaletteStore from './useColorPaletteStore';
-import useIconStore from './useIconStore';
+import useColorPaletteStore from './useColorPaletteStore/useColorPaletteStore';
+import useIconStore from './useIconStore/useIconStore';
 
 export {useColorPaletteStore, useIconStore};
